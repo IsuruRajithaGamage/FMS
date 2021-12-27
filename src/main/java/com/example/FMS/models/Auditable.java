@@ -15,7 +15,7 @@ import java.util.Date;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 
-public abstract class Auditable {
+public abstract class Auditable<U> {
 
     @CreatedBy
     protected U createdBy;
