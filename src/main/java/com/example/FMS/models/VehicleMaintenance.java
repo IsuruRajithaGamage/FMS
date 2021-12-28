@@ -39,7 +39,7 @@ public class VehicleMaintenance extends Auditable<String> {
     @ManyToOne
     @JoinColumn(name="supplierid", insertable=false, updatable=false)
     private Supplier supplier;
-    private Integer supplierid;
 
+    private Integer supplierid;
     private String remarks;
 }
