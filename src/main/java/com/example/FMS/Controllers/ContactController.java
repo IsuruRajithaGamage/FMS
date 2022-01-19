@@ -10,4 +10,6 @@ public class ContactController {
     public String getContacts(){
         return  "contact";
     }
+
+
 }
