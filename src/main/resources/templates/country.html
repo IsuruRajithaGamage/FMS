@@ -542,6 +542,7 @@
                   <th scope="col">Code</th>
                   <th scope="col">Country</th>
                   <th scope="col">Nationality</th>
+                  <th scope="col"> Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -551,6 +552,12 @@
                   <td th:text="${country.code}"></td>
                   <td th:text="${country.continent}"></td>
                   <td th:text="${country.nationality}"></td>
+                  <td>
+                    <div class="btn-group">
+                      <a class ="btn btn-primary" id="editButton">Edit</a>
+                    </div>
+
+                  </td>
                 </tr>
                 </tbody>
               </table>
@@ -591,15 +598,19 @@
 <!--  pop up form-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+
+
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">New Country</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+
         <div class="modal-body">
           <form th:action="@{/Countries/addNew}"  method="post">
             <div class="form-group">
@@ -636,9 +647,61 @@
     </div>
   </div>
 
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
 
-  <!-- Vendor JS Files -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Country</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+          <div class="modal-body">
+            <form th:action="@{/Countries/addNew}"  method="post">
+
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Description:</label>
+                <input type="text" class="form-control" id="descriptionEdit" name="description">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Capital:</label>
+                <input class="form-control" id="capitalEdit" name="capital">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Code:</label>
+                <input class="form-control" id="codeEdit" name="code">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Continent:</label>
+                <input class="form-control" id="continentEdit" name="continent">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Nationality:</label>
+                <input class="form-control" id="nationalityEdit" name="nationality">
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+        <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.min.js"></script>
@@ -655,6 +718,7 @@
   <script src="assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="assets/js/country.js"></script>
 
 
 </body>
